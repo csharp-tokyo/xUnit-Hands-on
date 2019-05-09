@@ -1,4 +1,4 @@
-# Getting Started
+# xUnitをはじめよう！
 
 ## プロジェクトを用意する
 
