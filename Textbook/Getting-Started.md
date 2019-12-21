@@ -47,6 +47,7 @@ namespace GettingStarted
     {
         public static int Add(int x, int y) => x + y;
         public static int Subtract(int x, int y) => x - y;
+        public static bool IsOdd(int value) => value % 2 == 1;
     }
 }
 ```
@@ -75,28 +76,36 @@ namespace GettingStarted.Test
 }
 ```
 
-## 引数を利用したテスト
+## Theoryを利用したテスト
 
-足し算、引き算ともに引数を利用して複数のテストを実施する。
-FactをTheoryに変更し、実行する引数をInlineDataで指定する。
+Factは常に正となるテストを実施するが、特定のデータセットでのみ当てはまるテストはTheoryを使い、対象のデータセットをInlineDataで指定する。
+
+実際にIsOddメソッド（奇数判定メソッド）で試してみよう。
 
 ```cs
 [Theory]
-[InlineData(2, 2, 4)]
-[InlineData(3, 3, 6)]
-[InlineData(2, 2, 5)]
-public void AddTest(int x, int y, int sum)
+[InlineData(3)]
+[InlineData(4)]
+public void IsOddWhenTrue(int value)
 {
-    Assert.Equal(sum, Calculator.Add(x, y));
+    Assert.True(Calculator.IsOdd(value));
+}
+
+[Theory]
+[InlineData(2)]
+[InlineData(4)]
+public void IsOddWhenFalse(int value)
+{
+    Assert.False(Calculator.IsOdd(value));
 }
 ```
 
-実行すると3番目がエラーになる。
+実行するとIsOddWhenTrueの2番目がエラーになる。
 
-> [InlineData(2, 2, 5)]
+> [InlineData(4)]
 
 を
 
-> [InlineData(2, 3, 5)]
+> [InlineData(5)]
 
 に修正して再実行する。全て正常になるのが見て取れる。

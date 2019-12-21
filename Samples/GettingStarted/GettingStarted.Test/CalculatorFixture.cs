@@ -4,19 +4,32 @@ namespace GettingStarted.Test
 {
     public class CalculatorFixture
     {
-        [Theory]
-        [InlineData(2, 2, 4)]
-        [InlineData(3, 3, 6)]
-        [InlineData(2, 3, 5)]
-        public void AddTest(int x, int y, int sum)
+        [Fact]
+        public void Add()
         {
-            Assert.Equal(sum, Calculator.Add(x, y));
+            Assert.Equal(5, Calculator.Add(2, 3));
         }
 
         [Fact]
-        public void SubtractTest()
+        public void Subtract()
         {
             Assert.Equal(1, Calculator.Subtract(3, 2));
+        }
+
+        [Theory]
+        [InlineData(3)]
+        [InlineData(5)]
+        public void IsOddWhenTrue(int value)
+        {
+            Assert.True(Calculator.IsOdd(value));
+        }
+
+        [Theory]
+        [InlineData(2)]
+        [InlineData(4)]
+        public void IsOddWhenFalse(int value)
+        {
+            Assert.False(Calculator.IsOdd(value));
         }
     }
 }
