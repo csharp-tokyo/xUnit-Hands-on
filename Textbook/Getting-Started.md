@@ -1,5 +1,7 @@
 # xUnitをはじめよう！
 
+この項は公式ドキュメント「[Getting Started with xUnit.net](https://xunit.net/docs/getting-started/netcore/cmdline)」をベースとしています。
+
 ## プロジェクトを用意する
 
 ソリューション保管用のディレクトリを作成する
@@ -78,7 +80,7 @@ namespace GettingStarted.Test
 
 ## Theoryを利用したテスト
 
-Factは常に正となるテストを実施するが、特定のデータセットでのみ当てはまるテストはTheoryを使い、対象のデータセットをInlineDataで指定する。
+Factは常に正となるテストを実施するが、特定のデータセットでのみ当てはまるテストはTheoryを使う。対象のデータセットの指定は複数あるが、まずはInlineDataを利用する。
 
 実際にIsOddメソッド（奇数判定メソッド）で試してみよう。
 
