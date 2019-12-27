@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['iasynclifetime',['IAsyncLifetime',['../interface_xunit_1_1_i_async_lifetime.html',1,'Xunit']]],
+  ['iclassfixture',['IClassFixture',['../interface_xunit_1_1_i_class_fixture.html',1,'Xunit']]],
+  ['icollectionfixture',['ICollectionFixture',['../interface_xunit_1_1_i_collection_fixture.html',1,'Xunit']]],
+  ['idatadiscoverer',['IDataDiscoverer',['../interface_xunit_1_1_sdk_1_1_i_data_discoverer.html',1,'Xunit::Sdk']]],
+  ['imessagebus',['IMessageBus',['../interface_xunit_1_1_sdk_1_1_i_message_bus.html',1,'Xunit::Sdk']]],
+  ['inlinedataattribute',['InlineDataAttribute',['../class_xunit_1_1_inline_data_attribute.html',1,'Xunit']]],
+  ['inlinedatadiscoverer',['InlineDataDiscoverer',['../class_xunit_1_1_sdk_1_1_inline_data_discoverer.html',1,'Xunit::Sdk']]],
+  ['inrangeexception',['InRangeException',['../class_xunit_1_1_sdk_1_1_in_range_exception.html',1,'Xunit::Sdk']]],
+  ['isassignablefromexception',['IsAssignableFromException',['../class_xunit_1_1_sdk_1_1_is_assignable_from_exception.html',1,'Xunit::Sdk']]],
+  ['isnottypeexception',['IsNotTypeException',['../class_xunit_1_1_sdk_1_1_is_not_type_exception.html',1,'Xunit::Sdk']]],
+  ['istypeexception',['IsTypeException',['../class_xunit_1_1_sdk_1_1_is_type_exception.html',1,'Xunit::Sdk']]],
+  ['itestcaseorderer',['ITestCaseOrderer',['../interface_xunit_1_1_sdk_1_1_i_test_case_orderer.html',1,'Xunit::Sdk']]],
+  ['itestcollectionorderer',['ITestCollectionOrderer',['../interface_xunit_1_1_i_test_collection_orderer.html',1,'Xunit']]],
+  ['itestframeworkattribute',['ITestFrameworkAttribute',['../interface_xunit_1_1_sdk_1_1_i_test_framework_attribute.html',1,'Xunit::Sdk']]],
+  ['itestframeworktypediscoverer',['ITestFrameworkTypeDiscoverer',['../interface_xunit_1_1_sdk_1_1_i_test_framework_type_discoverer.html',1,'Xunit::Sdk']]],
+  ['itraitattribute',['ITraitAttribute',['../interface_xunit_1_1_sdk_1_1_i_trait_attribute.html',1,'Xunit::Sdk']]],
+  ['itraitdiscoverer',['ITraitDiscoverer',['../interface_xunit_1_1_sdk_1_1_i_trait_discoverer.html',1,'Xunit::Sdk']]],
+  ['ixunittestcase',['IXunitTestCase',['../interface_xunit_1_1_sdk_1_1_i_xunit_test_case.html',1,'Xunit::Sdk']]],
+  ['ixunittestcasediscoverer',['IXunitTestCaseDiscoverer',['../interface_xunit_1_1_sdk_1_1_i_xunit_test_case_discoverer.html',1,'Xunit::Sdk']]],
+  ['ixunittestcollectionfactory',['IXunitTestCollectionFactory',['../interface_xunit_1_1_sdk_1_1_i_xunit_test_collection_factory.html',1,'Xunit::Sdk']]]
+];
