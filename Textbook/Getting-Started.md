@@ -38,6 +38,10 @@ dotnet sln GettingStarted.sln add GettingStarted.Test/GettingStarted.Test.csproj
 
 テストプロジェクトからテスト対象のプロジェクトへ参照を追加する
 
+```cmd
+dotnet add GettingStarted.Test/GettingStarted.Test.csproj reference GettingStarted/GettingStarted.csproj
+```
+
 ## 初めてのxUnit
 
 テスト対象のクラスを作成する
