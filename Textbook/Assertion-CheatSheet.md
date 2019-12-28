@@ -22,9 +22,9 @@ TODO:サンプルの用意
 |PropertyChanged|PropertyChangedAsync|指定プロパティが変更通知されるか？|
 |InRange|NotInRange|値が範囲内に収まるか？|
 |Subset|Superset|ISetが別のISetのサブセットorスーパーセットかどうか？|
-|ProperSubset|ProperSuperset|Subset/Supersetと異なり、同数・同要素を許容しない|
+|ProperSubset|ProperSuperset|Subset/Supersetと異なり、同数・同要素を許容しない厳密な検証|
 |StartsWith||文字列が前方一致するか？|
 |EndsWith||文字列が後方一致するか？|
 |Matches|DoesNotMatch|文字列がパターンにマッチするか？|
 |IsType|IsNotType|オブジェクトが指定されたTypeか？|
-|IsAssignableFrom||IsTypeとこなり派生Typeでも可|
+|IsAssignableFrom||IsTypeと異なり派生Typeでも可|
