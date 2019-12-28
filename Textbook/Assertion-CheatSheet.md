@@ -1,5 +1,9 @@
 # Assertionチートシート
 
+より詳細は[APIドキュメント](https://nuitsjp.github.io/xUnit-and-Moq-Hands-on/class_xunit_1_1_assert.html)を参照。
+
+TODO:サンプルの用意
+
 |Assertion|否定形・非同期|概要|
 |--|--|--|
 |All||指定した複数の値がActionをすべてパスするか？|
