@@ -4,47 +4,24 @@
 
 ## プロジェクトを用意する
 
-ソリューション保管用のディレクトリを作成する
+WorkSpaceフォルダの以下を実行して、テスト用のプロジェクトを作成しましょう。
 
-```cmd
-mkdir GettingStarted
-cd GettingStarted
-```
+- Windows ： Getting-Started.cmd
 
-空のソリューションを作成する
+WorksSpaceフォルダに作成されたGetting-Startedフォルダ内のGetting-Started.slnを開きましょう。
 
-```cmd
-dotnet new sln -n GettingStarted
-```
+ソリューション内にはつぎの二つのプロジェクトが含まれています。
 
-テスト対象のプロジェクトを作成する
+1. GettingStarted
+2. GettingStarted.Test
 
-```cmd
-dotnet new classlib -o GettingStarted
-```
-
-テストプロジェクトを作成する
-
-```cmd
-dotnet new xunit -o GettingStarted.Test
-```
-
-プロジェクトをソリューションに追加する
-
-```cmd
-dotnet sln GettingStarted.sln add GettingStarted/GettingStarted.csproj
-dotnet sln GettingStarted.sln add GettingStarted.Test/GettingStarted.Test.csproj
-```
-
-テストプロジェクトからテスト対象のプロジェクトへ参照を追加する
-
-```cmd
-dotnet add GettingStarted.Test/GettingStarted.Test.csproj reference GettingStarted/GettingStarted.csproj
-```
+GettingStartedがテスト対象のプロジェクトで、GettingStarted.Testがテストする側のプロジェクトです。それでは早速始めましょう。
 
 ## 初めてのxUnit
 
-テスト対象のクラスを作成する
+まずはテスト対象のクラスを作成します。
+
+GettingStartedプロジェクトにCalculatorクラスを作成し、以下のように記述してください。
 
 ```cs
 namespace GettingStarted
@@ -57,6 +34,10 @@ namespace GettingStarted
     }
 }
 ```
+
+足し算・引き算そして奇数判定を行うメソッドが実装されています。
+
+続いてGettingStarted.TestプロジェクトにCalculatorクラスをテストするCalculatorFixture
 
 テストクラスを作成する
 
