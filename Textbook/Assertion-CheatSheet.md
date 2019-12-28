@@ -27,4 +27,4 @@ TODO:サンプルの用意
 |EndsWith||文字列が後方一致するか？|
 |Matches|DoesNotMatch|文字列がパターンにマッチするか？|
 |IsType|IsNotType|オブジェクトが指定されたTypeか？|
-|IsAssignableFrom||IsTypeとこなり派生Typeでも可|
+|IsAssignableFrom||IsTypeと異なり派生Typeでも可|
