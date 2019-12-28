@@ -2,29 +2,29 @@
 
 この項は公式ドキュメント「[Getting Started with xUnit.net](https://xunit.net/docs/getting-started/netcore/cmdline)」をベースとしています。
 
-## プロジェクトを用意する
+## ハンズオンワークスペースを作成する
 
-WorkSpaceフォルダの以下を実行して、テスト用のプロジェクトを作成しましょう。
+まずは本ハンズオンを実行するためのワークスペース、ワークソリューションを作成しましょう。
 
-- Windows ： Getting-Started.cmd
+rootフォルダの以下のコマンドを実行してください。
 
-WorksSpaceフォルダに作成されたGetting-Startedフォルダ内のGetting-Started.slnを開きましょう。
+- Windows ： CreateWorkSpace.cmd
 
-ソリューション内にはつぎの二つのプロジェクトが含まれています。
+WorksSpaceフォルダにが作成され、その中にHelloXUnitソリューションが作成されます。ソリューション内にはつぎの二つのプロジェクトが含まれています。
 
-1. GettingStarted
-2. GettingStarted.Test
+1. HelloXUnit
+2. HelloXUnit.Test
 
-GettingStartedがテスト対象のプロジェクトで、GettingStarted.Testがテストする側のプロジェクトです。それでは早速始めましょう。
+HelloXUnitがテスト対象のプロジェクトで、HelloXUnit.Testがテストする側のプロジェクトです。それでは早速始めましょう。
 
 ## 初めてのxUnit
 
 まずはテスト対象のクラスを作成します。
 
-GettingStartedプロジェクトにCalculatorクラスを作成し、以下のように記述してください。
+HelloXUnitプロジェクトにCalculatorクラスを作成し、以下のように記述してください。
 
 ```cs
-namespace GettingStarted
+namespace HelloXUnit
 {
     public class Calculator
     {
@@ -37,14 +37,14 @@ namespace GettingStarted
 
 足し算・引き算そして奇数判定を行うメソッドが実装されています。
 
-続いてGettingStarted.TestプロジェクトにCalculatorクラスをテストするCalculatorFixture
+続いてHelloXUnit.TestプロジェクトにCalculatorクラスをテストするCalculatorFixture
 
 テストクラスを作成する
 
 ```cs
 using Xunit;
 
-namespace GettingStarted.Test
+namespace HelloXUnit.Test
 {
     public class CalculatorFixture
     {
@@ -62,6 +62,16 @@ namespace GettingStarted.Test
     }
 }
 ```
+
+## テストの実行
+
+以下のコマンドでコンソールから実行できる。
+
+```cmd
+dotnet test
+```
+
+TODO：個々のIDEからの実行方法（VSとVS for Mac）
 
 ## Theoryを利用したテスト
 
