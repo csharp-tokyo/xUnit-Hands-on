@@ -1,7 +1,9 @@
 # xUnit and Moq Hands-on
 
 ## xUnit.net
-[xUnit.netをはじめよう！](Textbook/Getting-Started.md)
+
+1. [xUnit.netをはじめよう！](Textbook/Getting-Started.md)
+2. [Assertionチートシート](Textbook/Assertion-CheatSheet.md)
 
 ## xUnit.net API Doumentation
 
