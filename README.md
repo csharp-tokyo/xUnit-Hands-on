@@ -5,8 +5,8 @@
 1. [xUnit.netをはじめよう！](Textbook/Getting-Started.md)
 2. [初期化処理と終了処理](Textbook/Setup-TearDown.md)
 3. [非同期処理のテスト](Textbook/Async-Await.md)
-4. テストの平行処理
-    1. [並列テストの実行](Textbook/Running-Tests-in-Parallel.md)
+4. [並列テストの実行](Textbook/Running-Tests-in-Parallel.md)
+5. [共有コンテキスト](Textbook/Shared-Context.md)
 
 ## xUnit.net API Doumentation
 
