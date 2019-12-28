@@ -75,6 +75,8 @@ namespace HelloXUnit.Test
 }
 ```
 
+xUnitでは様々なAssertionメソッドで標準で用意されています。[Assertionチートシート](Assertion-CheatSheet.md)を用意してありますので、そちらを御覧ください。
+
 ## Theoryを利用したテスト
 
 Factは常に正となるテストを実施するが、特定のデータセットでのみ当てはまるテストはTheoryを使う。対象のデータセットの指定は複数あるが、まずはInlineDataを利用する。
@@ -108,3 +110,5 @@ public void IsOddWhenFalse(int value)
 > [InlineData(5)]
 
 に修正して再実行する。全て正常になるのが見て取れる。
+
+[戻る](..\README.md)

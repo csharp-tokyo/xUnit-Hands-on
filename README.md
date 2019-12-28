@@ -3,14 +3,15 @@
 ## xUnit.net
 
 1. [xUnit.netをはじめよう！](Textbook/Getting-Started.md)
-2. [Assertionチートシート](Textbook/Assertion-CheatSheet.md)
+2. [初期化処理と終了処理](Textbook/Setup-TearDown.md)
 
 ## xUnit.net API Doumentation
 
-公式にはドキュメントがないため、コードから自動生成したものを下記に公開しています。
-
+- [Assertionチートシート](Textbook/Assertion-CheatSheet.md)
 - [xUnit API Doumentation](https://nuitsjp.github.io/xUnit-and-Moq-Hands-on/)
   - [Assertクラス](https://nuitsjp.github.io/xUnit-and-Moq-Hands-on/class_xunit_1_1_assert.html)
+
+公式にはドキュメントがないため、コードから自動生成したものを公開しています。
 
 ## Link
 
