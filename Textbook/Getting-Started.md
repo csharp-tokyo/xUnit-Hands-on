@@ -15,7 +15,19 @@ WorksSpaceフォルダにが作成され、その中にHelloXUnitソリューシ
 1. HelloXUnit
 2. HelloXUnit.Test
 
-HelloXUnitがテスト対象のプロジェクトで、HelloXUnit.Testがテストする側のプロジェクトです。それでは早速始めましょう。
+HelloXUnitがテスト対象のプロジェクトで、HelloXUnit.Testがテストする側のプロジェクトです。
+
+HelloXUnit.Testにはデフォルトで一つのテストメソッドが実装されています。まずはそのテストを実行し、ワークスペースが正しく作られたことを確認してみましょう。
+
+以下のコマンドでコンソールから実行します。
+
+```cmd
+dotnet test
+```
+
+TODO：個々のIDEからの実行方法（VSとVS for Mac）
+
+これで準備は完了です。それでは早速始めましょう。
 
 ## 初めてのxUnit
 
@@ -62,16 +74,6 @@ namespace HelloXUnit.Test
     }
 }
 ```
-
-## テストの実行
-
-以下のコマンドでコンソールから実行できる。
-
-```cmd
-dotnet test
-```
-
-TODO：個々のIDEからの実行方法（VSとVS for Mac）
 
 ## Theoryを利用したテスト
 
