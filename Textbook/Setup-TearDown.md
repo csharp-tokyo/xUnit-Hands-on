@@ -107,4 +107,4 @@ namespace HelloXUnit.Test
 
 では再度テストを実行します。全て成功することが確認できるはずです。
 
-[戻る](..\README.md)
+[戻る](../README.md)

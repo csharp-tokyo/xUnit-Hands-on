@@ -91,4 +91,4 @@ HelloXUnit.ParallelTestプロジェクト内のUnitTest1.csを開き次のよう
 
 並列実行をカスタムする機能が提供されていますが、ここでの解説は省略します。公式ドキュメントの「[Running Tests in Parallel](https://xunit.net/docs/running-tests-in-parallel)」に詳細な記述がありますので、そちらを御覧ください。
 
-[戻る](README.md)
+[戻る](../README.md)

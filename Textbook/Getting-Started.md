@@ -111,4 +111,4 @@ public void IsOddWhenFalse(int value)
 
 に修正して再実行する。全て正常になるのが見て取れる。
 
-[戻る](..\README.md)
+[戻る](../README.md)
