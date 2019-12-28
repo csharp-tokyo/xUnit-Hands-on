@@ -4,6 +4,7 @@
 
 1. [xUnit.netをはじめよう！](Textbook/Getting-Started.md)
 2. [初期化処理と終了処理](Textbook/Setup-TearDown.md)
+3. [非同期処理のテスト](Textbook/Async-Await.md)
 
 ## xUnit.net API Doumentation
 

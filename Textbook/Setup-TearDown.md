@@ -34,7 +34,7 @@ using Xunit;
 
 namespace HelloXUnit.Test
 {
-    public class FilesTest : IDisposable
+    public class FilesTests : IDisposable
     {
         public void Dispose()
         {
@@ -46,14 +46,16 @@ namespace HelloXUnit.Test
 初期処理として、コンストラクタで削除対象のファイルを作成します。
 
 ```cs
-        private const string FileName = "test.txt";
+        private const string ExistFileName = "test.txt";
+        private const string TextFileContent = "Hello, xUnit.net!";
+        private const string NotExistFileName = "NotExistFile";
 
-        public FilesTest()
+        public FilesTests()
         {
-            if (File.Exists(FileName))
-                File.Delete(FileName);
+            if (File.Exists(ExistFileName))
+                File.Delete(ExistFileName);
 
-            File.WriteAllText(FileName, "Hello, xUnit!");
+            File.WriteAllText(ExistFileName, TextFileContent);
         }
 ```
 
@@ -62,8 +64,8 @@ namespace HelloXUnit.Test
 ```cs
         public void Dispose()
         {
-            if (File.Exists(FileName))
-                File.Delete(FileName);
+            if (File.Exists(ExistFileName))
+                File.Delete(ExistFileName);
         }
 ```
 
@@ -73,14 +75,14 @@ namespace HelloXUnit.Test
 
 ```cs
         [Fact]
-        public void DeleteIfExistWhenExist()
+        public void DeleteIfExistWhenExistFile()
         {
-            Assert.True(Files.DeleteIfExist(FileName));
-            Assert.False(File.Exists(FileName));
+            Assert.True(Files.DeleteIfExist(ExistFileName));
+            Assert.False(File.Exists(ExistFileName));
         }
 
         [Fact]
-        public void DeleteIfExistWhenNotExist()
+        public void DeleteIfExistWhenNotExistFile()
         {
             Assert.False(Files.DeleteIfExist("NotExistFile"));
         }
