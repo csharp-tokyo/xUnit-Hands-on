@@ -42,7 +42,8 @@ namespace HelloXUnit.Test
         [Fact]
         public async Task ReadAllTextAsyncWhenNotExistFile()
         {
-            await Assert.ThrowsAsync<FileNotFoundException>(() => Files.ReadAllTextAsync(NotExistFileName));
+            await Assert.ThrowsAsync<FileNotFoundException>(
+                () => Files.ReadAllTextAsync(NotExistFileName));
         }
 
 
