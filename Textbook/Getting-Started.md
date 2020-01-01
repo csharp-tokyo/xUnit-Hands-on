@@ -10,7 +10,7 @@ rootフォルダの以下のコマンドを実行してください。
 
 - Windows ： CreateWorkSpace.cmd
 
-WorksSpaceフォルダにが作成され、その中にHelloXUnitソリューションが作成されます。ソリューション内にはつぎの二つのプロジェクトが含まれています。
+WorkSpaceフォルダが作成され、その中にHelloXUnitソリューションが作成されます。ソリューション内にはつぎの二つのプロジェクトが含まれています。
 
 1. HelloXUnit
 2. HelloXUnit.Test
