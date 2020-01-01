@@ -23,8 +23,8 @@ namespace HelloXUnit.SharedContextTest
     [CollectionDefinition("Heavy collection")]
     public class HeavyCollection : ICollectionFixture<HeavyFixture>
     {
-        // CollectionDefinition‚ğ•t—^‚µ‚½ƒNƒ‰ƒX‚Ì‚İì¬‚·‚ê‚Î‚æ‚¢
-        // “Á•Ê‚ÈÀ‘•‚Í•s—v
+        // CollectionDefinitionã‚’ä»˜ä¸ã—ãŸã‚¯ãƒ©ã‚¹ã®ã¿ä½œæˆã™ã‚Œã°ã‚ˆã„
+        // ç‰¹åˆ¥ãªå®Ÿè£…ã¯ä¸è¦
     }
 
     [Collection("Heavy collection")]
