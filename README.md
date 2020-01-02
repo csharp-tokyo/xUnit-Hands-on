@@ -7,7 +7,7 @@
 3. [非同期処理のテスト](Textbook/Async-Await.md)
 4. [並列テストの実行](Textbook/Running-Tests-in-Parallel.md)
 5. [共有コンテキスト](Textbook/Shared-Context.md)
-6. [TBD.デバッグ出力]()
+6. [デバッグ出力](Textbook/Capturing-Output.md)
 6. [TBD.xxxData]()
 
 ## xUnit.net API Doumentation
