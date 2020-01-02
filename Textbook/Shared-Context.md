@@ -234,3 +234,45 @@ CollectionDefinitionでコレクション名を定義し、ICollectionFixture&lt
 これでHeavyContextクラスの生成・破棄は4秒×1回の4CPU秒まで削減されます。なお実行時間についてはクラスフィクスチャーの際と同様で4秒程度です。しかし平行処理数が増えれば利用するCPU時間が減るため、テスト全体の軽量化につながります。
 
 コレクション フィクスチャーを利用した場合、同一コレクション内の全てのメソッドは平行実行されます（実際の平行度は仮想CPUコア数に依存します）。詳細は「[並列テストの実行](Textbook/Running-Tests-in-Parallel.md)」を御覧ください。
+
+## 非同期ライフタイム
+
+共有コンテキストには、非同期に初期化・終了処理を行うための、[IAsyncLifetime](https://nuitsjp.github.io/xUnit-and-Moq-Hands-on/interface_xunit_1_1_i_async_lifetime.html)が用意されています。
+
+実際に試しながらみてみましょう。
+
+非同期に重たい処理を実行する、AsyncHeavyFixtureクラスをUnitTest1.csの中に作成しましょう。
+
+```cs
+    public class AsyncHeavyFixture : IAsyncLifetime
+    {
+        public Task InitializeAsync() => Task.Delay(TimeSpan.FromSeconds(2));
+
+        public void Use()
+        {
+        }
+
+        public Task DisposeAsync() => Task.Delay(TimeSpan.FromSeconds(2));
+    }
+```
+
+そしてAsyncHeavyFixtureを利用するUnitTest3クラスを作成します。
+
+```cs
+    public class UnitTest3 : IClassFixture<AsyncHeavyFixture>
+    {
+        private readonly AsyncHeavyFixture _asyncHeavyFixture;
+
+        public UnitTest3(AsyncHeavyFixture asyncAsyncHeavyFixture)
+        {
+            _asyncHeavyFixture = asyncAsyncHeavyFixture;
+        }
+
+        [Fact]
+        public void Test() => _asyncHeavyFixture.Use();
+    }
+```
+
+AsyncHeavyFixtureはここまでに解説した共有コンテキストそれぞれで利用可能です。ここではIClassFixture&lt;T>を利用しているのが見て取れます。
+
+[戻る](../README.md)
