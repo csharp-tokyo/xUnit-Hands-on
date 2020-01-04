@@ -3,12 +3,12 @@
 ## xUnit.net
 
 1. [xUnit.netをはじめよう！](Textbook/Getting-Started.md)
-2. [初期化処理と終了処理](Textbook/Setup-TearDown.md)
-3. [非同期処理のテスト](Textbook/Async-Await.md)
-4. [並列テストの実行](Textbook/Running-Tests-in-Parallel.md)
-5. [共有コンテキスト](Textbook/Shared-Context.md)
-6. [デバッグ出力](Textbook/Capturing-Output.md)
-6. [TBD.xxxData]()
+2. [TheoryとDataAttribute](Textbook/Theory-And-DataAttribute.md)
+3. [初期化処理と終了処理](Textbook/Setup-TearDown.md)
+4. [非同期処理のテスト](Textbook/Async-Await.md)
+5. [並列テストの実行](Textbook/Running-Tests-in-Parallel.md)
+6. [共有コンテキスト](Textbook/Shared-Context.md)
+7. [デバッグ出力](Textbook/Capturing-Output.md)
 
 ## xUnit.net API Doumentation
 
