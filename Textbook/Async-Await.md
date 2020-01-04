@@ -7,7 +7,7 @@
 まずFilesクラスに次のようなメソッドを定義します。
 
 ```cs
-        public static Task<string> ReadAllTextAsync(string file)
+        public static async Task<string> ReadAllTextAsync(string file)
         {
             throw new NotImplementedException();
         }
