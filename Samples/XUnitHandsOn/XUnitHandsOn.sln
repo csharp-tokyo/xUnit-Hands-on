@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitHandsOn.SharedContextT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitHandsOn.SetupTearDownTest", "XUnitHandsOn.SetupTearDownTest\XUnitHandsOn.SetupTearDownTest.csproj", "{57354DC8-3C77-4E0C-8D53-03FC9C7E507B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitHandsOn.AsyncTest", "XUnitHandsOn.AsyncTest\XUnitHandsOn.AsyncTest.csproj", "{D933BBE3-46FE-400E-8775-1EE065AD7F1C}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,5 +91,17 @@ Global
 		{57354DC8-3C77-4E0C-8D53-03FC9C7E507B}.Release|x64.Build.0 = Release|Any CPU
 		{57354DC8-3C77-4E0C-8D53-03FC9C7E507B}.Release|x86.ActiveCfg = Release|Any CPU
 		{57354DC8-3C77-4E0C-8D53-03FC9C7E507B}.Release|x86.Build.0 = Release|Any CPU
+		{D933BBE3-46FE-400E-8775-1EE065AD7F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D933BBE3-46FE-400E-8775-1EE065AD7F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D933BBE3-46FE-400E-8775-1EE065AD7F1C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D933BBE3-46FE-400E-8775-1EE065AD7F1C}.Debug|x64.Build.0 = Debug|Any CPU
+		{D933BBE3-46FE-400E-8775-1EE065AD7F1C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D933BBE3-46FE-400E-8775-1EE065AD7F1C}.Debug|x86.Build.0 = Debug|Any CPU
+		{D933BBE3-46FE-400E-8775-1EE065AD7F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D933BBE3-46FE-400E-8775-1EE065AD7F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D933BBE3-46FE-400E-8775-1EE065AD7F1C}.Release|x64.ActiveCfg = Release|Any CPU
+		{D933BBE3-46FE-400E-8775-1EE065AD7F1C}.Release|x64.Build.0 = Release|Any CPU
+		{D933BBE3-46FE-400E-8775-1EE065AD7F1C}.Release|x86.ActiveCfg = Release|Any CPU
+		{D933BBE3-46FE-400E-8775-1EE065AD7F1C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
