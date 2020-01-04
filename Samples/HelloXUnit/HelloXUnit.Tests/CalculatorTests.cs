@@ -1,10 +1,8 @@
-
-using System;
 using Xunit;
 
-namespace HelloXUnit.Test
+namespace HelloXUnit.Tests
 {
-    public class CalculatorTest
+    public class CalculatorTests
     {
         [Fact]
         public void AddTest()
