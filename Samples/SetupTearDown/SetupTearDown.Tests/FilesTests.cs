@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using Xunit;
 
-namespace SetupTearDown.Test
+namespace SetupTearDown.Tests
 {
     public class FilesTests : IDisposable
     {
