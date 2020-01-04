@@ -26,7 +26,7 @@ HelloXUnit.DataAttributeTestプロジェクトのUnitTest1.csクラスを開い�
         [InlineData(-1, -2, -3)]
         public void InlineDataTest(int x, int y, int result)
         {
-            Assert.Equal(result, Add(x, y));
+            Assert.Equal(result, Calculator.Add(x, y));
         }
 ```
 
@@ -65,7 +65,7 @@ MemberDataは3種類のメンバーを利用することができます。
         [MemberData(nameof(GetValues))]
         public void MemberDataTestByMethod(int x, int y, int result)
         {
-            Assert.Equal(result, Add(x, y));
+            Assert.Equal(result, Calculator.Add(x, y));
         }
 ```
 
@@ -85,7 +85,7 @@ MemberData属性の引数にメソッド名を指定します。
         [MemberData(nameof(ValuesProperty))]
         public void MemberDataTestByProperty(int x, int y, int result)
         {
-            Assert.Equal(result, Add(x, y));
+            Assert.Equal(result, Calculator.Add(x, y));
         }
 ```
 
@@ -103,7 +103,7 @@ MemberData属性の引数にメソッド名を指定します。
         [MemberData(nameof(ValuesField))]
         public void MemberDataTestByField(int x, int y, int result)
         {
-            Assert.Equal(result, Add(x, y));
+            Assert.Equal(result, Calculator.Add(x, y));
         }
 ```
 
@@ -135,7 +135,7 @@ MemberDataで記載した場合に、テストケースクラスにテストデ�
         [ClassData(typeof(AddTestDataSets))]
         public void ClassDataTest(int x, int y, int result)
         {
-            Assert.Equal(result, Add(x, y));
+            Assert.Equal(result, Calculator.Add(x, y));
         }
 ```
 
