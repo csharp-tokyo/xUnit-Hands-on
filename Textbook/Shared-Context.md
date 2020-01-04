@@ -49,13 +49,13 @@ xUnit.netでは、つぎの三つレベルの共有化手法が提供されて�
 UnitTest1.csファイルに二つのテストクラスを作成してください。
 
 ```cs
-    public class UnitTest1 : IDisposable, IClassFixture<HeavyFixture>
+    public class UnitTest1 : IDisposable
     {
         private readonly HeavyFixture _heavyFixture;
 
-        public UnitTest1(HeavyFixture heavyFixture)
+        public UnitTest1()
         {
-            _heavyFixture = heavyFixture;
+            _heavyFixture = new HeavyFixture();
         }
 
         [Fact]
@@ -67,7 +67,7 @@ UnitTest1.csファイルに二つのテストクラスを作成してくださ�
         public void Dispose()
         {
             _heavyFixture.Dispose();
-        } 
+        }
     }
 
     public class UnitTest2 : IDisposable
