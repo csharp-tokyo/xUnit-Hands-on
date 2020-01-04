@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Xunit;
 
-namespace HelloXUnit.DataAttributeTest
+namespace XUnitHandsOn.DataAttributeTest
 {
     public class UnitTest1
     {

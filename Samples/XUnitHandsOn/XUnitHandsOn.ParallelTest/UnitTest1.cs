@@ -1,8 +1,7 @@
-using System;
 using System.Threading;
 using Xunit;
 
-namespace HelloXUnit.ParallelTest
+namespace XUnitHandsOn.ParallelTest
 {
     [Collection("Our Test Collection #1")]
     public class UnitTest1

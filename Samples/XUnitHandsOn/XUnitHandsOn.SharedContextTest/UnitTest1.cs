@@ -1,13 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
-using Docker.DotNet;
-using Docker.DotNet.Models;
 using Xunit;
 
-namespace HelloXUnit.SharedContextTest
+namespace XUnitHandsOn.SharedContextTest
 {
     public class HeavyFixture : IDisposable
     {

@@ -1,7 +1,7 @@
 using Xunit;
 using Xunit.Abstractions;
 
-namespace HelloXUnit.CapturingOutputTest
+namespace XUnitHandsOn.CapturingOutputTest
 {
     public class UnitTest1
     {
