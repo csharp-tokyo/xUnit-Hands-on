@@ -1,10 +1,10 @@
 # 非同期処理のテスト
 
-非同期処理をテストする場合、テストケース側も同様に通常の非同期処理のように記述できます。
+xUnit.netでは非同期処理をテストする場合、テストケース側も通常の非同期処理と同様に記述できます。ここではテキストファイルを非同期に読み取り文字列を返すメソッドを実装・テストしてみましょう。
 
-テキストファイルを非同期に読み取り文字列を返すメソッドを実装してみましょう。
+それではWorkSpaceフォルダ下にあるAsyncAwaitソリューションを開いてください。
 
-まずFilesクラスに次のようなメソッドを定義します。
+まずAsyncAwaitプロジェクトのFilesクラスに次のようなメソッドを定義します。
 
 ```cs
         public static async Task<string> ReadAllTextAsync(string file)
@@ -13,7 +13,7 @@
         }
 ```
 
-続いてFilesTestsにテストケースを記述します。
+続いてAsyncAwait.TestsプロジェクトのFilesTestsにテストケースを記述します。FilesTestsには事前に[テスト用のファイルを初期化するコード](../WorkSpace/AsyncAwait/AsyncAwait.Tests/FilesTests.cs)が記述されています。
 
 ```cs
         [Fact]
@@ -33,6 +33,8 @@
 テストメソッド自体もasync/awaitを利用して記述することができます。
 
 ただし一点注意があります。xUnit.netの提供するAssertionには一部、同期用と非同期用のメソッドが異なるものがあります。上の例ではThrowsAsync&lt;T>を利用していますが、同期メソッドの場合はThrows&lt;T>を利用します。非同期用を利用しなかった場合、Assert.Throwsが完了する前にテストメソッドの実行が終わってしまい、テストが正常に終了してしまう可能性があります。
+
+非同期用のAssertionが提供されている場合、原則的にはそちらを利用してください。
 
 Assertionの詳細は[Assertionチートシート](Assertion-CheatSheet.md)を御覧ください。
 
