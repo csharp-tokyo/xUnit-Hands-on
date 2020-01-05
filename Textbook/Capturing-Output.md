@@ -11,13 +11,13 @@ xUnit.netではテスト実行にデバッグ支援などのために利用で�
 
 ## Unitテストでの出力のキャプチャー
 
-それではHelloXUnit.CapturingOutputTestプロジェクトのUnitTest1.csクラスを開いて、次のように実装してください。
+それではCapturingOutputソリューションを開き、UnitTest1.csクラスに次のように実装しましょう。
 
 ```cs
 using Xunit;
 using Xunit.Abstractions;
 
-namespace HelloXUnit.CapturingOutputTest
+namespace CapturingOutput.Tests
 {
     public class UnitTest1
     {
