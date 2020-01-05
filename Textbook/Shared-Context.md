@@ -15,15 +15,15 @@ xUnit.netでは、つぎの三つレベルの共有化手法が提供されて�
 - ※1 「[初期化処理と終了処理](Textbook/Setup-TearDown.md)」で説明しました
 - ※2 「[並列テストの実行](Textbook/Running-Tests-in-Parallel.md)」でも触れています
 
-では実際にそれぞれがどう異なるのか見ていきましょう。
+「スコープ」「ロジックの共有」「インスタンスの共有」がそれぞれどのような意味を持つのか、実際に見ていきましょう。
 
 # 共有クラスの作成
 
-まず処理を再利用するための共有クラスを作ります。
+まずロジック共有するためのクラスを作ります。
 
-今回は処理の見通しをよくするため、HelloXUnit.SharedContextTestプロジェクトのUnitTest1.csファイルに全て記述していきます。
+SharedContextソリューションを開き、SharedContext.Testsプロジェクト内のFixturesフォルダの下のHeavyFixture.csファイルを開いてください。
 
-まずはUnitTest1.csの中に、つぎのようなクラスを作成してください。
+ここに共有するロジックを以下のように記述します。
 
 ```cs
     public class HeavyFixture : IDisposable
@@ -40,13 +40,13 @@ xUnit.netでは、つぎの三つレベルの共有化手法が提供されて�
 
 コンストラクタとDisposeでそれぞれ2秒かかる重たいクラスです。
 
-例えばデータベース操作をするテスト群があったときに、Dockerをpullして起動するような場合などを想定しています（この場合、終了処理は特別重いわけではありませんが）。
+例えばデータベース操作をするテスト群があったときに、Dockerをpullして起動するような場合などを想定しています。
 
 これを用いてそれぞれの共有レベルを見ていきましょう。
 
 ## コンストラクタとDispose
 
-UnitTest1.csファイルに二つのテストクラスを作成してください。
+UnitTest1.cs、UnitTest2.csファイルをそれぞれ以下のように記述します。
 
 ```cs
     public class UnitTest1 : IDisposable
@@ -69,7 +69,9 @@ UnitTest1.csファイルに二つのテストクラスを作成してくださ�
             _heavyFixture.Dispose();
         }
     }
+```
 
+```cs
     public class UnitTest2 : IDisposable
     {
         private readonly HeavyFixture _heavyFixture;
@@ -107,7 +109,7 @@ xUnit.netではテストの実施のつどテストクラスのインスタン�
 3. テストクラスにIClassFixture&lt;T>を宣言する
 4. テストクラスのコンストラクタ引数にフィクスチャーを追加する
 
-先ほどのクラスを修正して実際に利用してみましょう。
+すでにHeavyFixtureとして1.2.は実装されているため、ここでは3.から開始します。
 
 UnitTest1クラスをつぎのように修正します。
 
@@ -136,7 +138,7 @@ UnitTest1クラスをつぎのように修正します。
 
 HeavyFixtureのDisposeはフレームワーク側が実施してくれるため、コメントアウトしている点に注意してください。
 
-これでHeavyContextクラスの生成・破棄は4秒×2回の8CPU秒程度になり、UnitTest1とUnitTest2は平行実行されるため、経過時間としては実際には4秒程度に短縮されます。
+これでHeavyContextクラスの生成・破棄は4秒×2回の8CPU秒程度になり、UnitTest1とUnitTest2は平行実行されるため、経過時間も4秒程度に短縮されます。
 
 なお複数のフィクスチャーを利用したい場合、IClassFixture&lt;T>を複数宣言し同じ数だけコンストラクタで受け取ります。
 
@@ -150,7 +152,7 @@ HeavyFixtureのDisposeはフレームワーク側が実施してくれるため�
             ...
 ```
 
-二つ注意が必要です。
+この場合、二つ注意が必要です。
 
 1. フィクスチャーの生成順序は制御できない
 2. コンストラクタで受け取るか否かにかかわらず、IClassFixtureを宣言するとxUnit.netはインスタンスを生成する
@@ -169,7 +171,7 @@ HeavyFixtureのDisposeはフレームワーク側が実施してくれるため�
 
 1.2.はすでに実装済みのHeavyFixtureを利用します。
 
-まずはUnitTest1.csファイルにコレクション定義クラスを作成しましょう。
+Collectionsフォルダ内のHeavyCollection.csファイルを開き、次のように実装します。
 
 ```cs
     [CollectionDefinition("Heavy collection")]
@@ -208,7 +210,9 @@ CollectionDefinitionでコレクション名を定義し、ICollectionFixture&lt
             //_heavyFixture.Dispose();
         } 
     }
+```
 
+```cs
     [Collection("Heavy collection")]
     public class UnitTest2 : IDisposable
     {
@@ -233,7 +237,7 @@ CollectionDefinitionでコレクション名を定義し、ICollectionFixture&lt
 
 これでHeavyContextクラスの生成・破棄は4秒×1回の4CPU秒まで削減されます。なお実行時間についてはクラスフィクスチャーの際と同様で4秒程度です。しかし平行処理数が増えれば利用するCPU時間が減るため、テスト全体の軽量化につながります。
 
-コレクション フィクスチャーを利用した場合、同一コレクション内の全てのメソッドは平行実行されます（実際の平行度は仮想CPUコア数に依存します）。詳細は「[並列テストの実行](Textbook/Running-Tests-in-Parallel.md)」を御覧ください。
+コレクション フィクスチャーを利用した場合、同一コレクション内の全てのメソッドは逐次実行されます。これは同一のリソースを利用することを想定しているからでしょう。詳細は「[並列テストの実行](Textbook/Running-Tests-in-Parallel.md)」を御覧ください。
 
 ## 非同期ライフタイム
 
@@ -241,7 +245,7 @@ CollectionDefinitionでコレクション名を定義し、ICollectionFixture&lt
 
 実際に試しながらみてみましょう。
 
-非同期に重たい処理を実行する、AsyncHeavyFixtureクラスをUnitTest1.csの中に作成しましょう。
+Fixturesフォルダの下に、非同期に重たい処理を実行するAsyncHeavyFixtureクラスを作成しましょう。
 
 ```cs
     public class AsyncHeavyFixture : IAsyncLifetime
