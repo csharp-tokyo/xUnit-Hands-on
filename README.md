@@ -1,16 +1,27 @@
 # xUnit Hands-on
 
-本リポジトリでは、[xunit.net](https://xunit.net/)のハンズオン資料を公開しています。
+本プロジェクトでは、[xunit.net](https://xunit.net/)のハンズオン資料を公開しています。
 
-本リポジトリは、つぎの三つも達成することを目的としています。
+本プロジェクトは、つぎの三つも達成することを目的としています。
 
 1. 集合教育を実施するための資料の提供
 2. 自習資料の提供
 3. ケーススタディを含めた情報共有の促進
 
-本リポジトリは
+本プロジェクトはCreateve Commonsライセンスの[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.ja)として公開しています。ライセンス許諾の範囲内であれば、非商用・商用にかかわらず自由に利用していただいて構いませんし、改変して利用いただいても構いません。
 
-## xUnit.net
+本プロジェクトではケーススタディを広く募集する予定です。準備ができた際には協力いただければ幸いです。
+
+## 環境
+
+本プロジェクトでは以下の環境を前提として資料を提供しています。
+
+- OS
+  - Windows 10
+  - macOS xxx
+- .NET Core 3.1 or later
+
+## ハンズオンコンテンツ
 
 1. [xUnit.netをはじめよう！](Textbook/Getting-Started.md)
 2. [初期化処理と終了処理](Textbook/Setup-TearDown.md)
