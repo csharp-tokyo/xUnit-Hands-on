@@ -21,7 +21,7 @@
   - macOS xxx
 - .NET Core 3.1 or later
 
-## ハンズオンコンテンツ
+## ハンズオン コンテンツ
 
 1. [xUnit.netをはじめよう！](Textbook/Getting-Started.md)
 2. [初期化処理と終了処理](Textbook/Setup-TearDown.md)
