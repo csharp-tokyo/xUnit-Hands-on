@@ -81,7 +81,7 @@ namespace HelloXUnit
 
 足し算・引き算そして奇数判定を行うメソッドが定義されていますが、まだ実装はされていません。
 
-続いてHelloXUnit.TestプロジェクトにCalculatorクラスをテストするCalculatorTestsクラスを作成する
+続いてHelloXUnit.TestプロジェクトにCalculatorクラスをテストするCalculatorTestsクラスを作成します。
 
 ```cs
 using Xunit;
