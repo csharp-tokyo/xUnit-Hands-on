@@ -1,4 +1,4 @@
-# xUnit Hands-on
+# xUnit.net Hands-on
 
 本プロジェクトでは、[xunit.net](https://xunit.net/)のハンズオン資料を公開しています。
 
