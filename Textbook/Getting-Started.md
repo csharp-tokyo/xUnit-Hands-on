@@ -4,18 +4,50 @@
 
 ## ハンズオンワークスペースを作成する
 
-まずは本ハンズオンを実行するためのワークスペース、ワークソリューションを作成しましょう。
+まずは本ハンズオンを実行するためのワークスペース、ワークソリューションを作成しましょう。ここではコンソールで作業しますが、各種IDEを利用していただいても問題ありません。
 
-rootフォルダの以下のコマンドを実行してください。
+まず本リポジトリのrootフォルダ内にあるWorkSpaceフォルダをコンソールで開き、ソリューションを作成します。
 
-- Windows ： CreateWorkSpace.cmd
+```cmd
+dotnet new sln -o HelloXUnit
+```
 
-WorkSpaceフォルダが作成され、その中にHelloXUnitソリューションが作成されます。ソリューション内にはつぎの二つのプロジェクトが含まれています。
+ソリューションを作成したら、作成されたフォルダに移動します。
 
-1. HelloXUnit
-2. HelloXUnit.Test
+```cmd
+cd HelloXUnit
+```
 
-HelloXUnitがテスト対象のプロジェクトで、HelloXUnit.Testがテストする側のプロジェクトです。
+ソリューションには二つのプロジェクトを作成します。
+
+1. テスト対象が含まれるプロジェクト
+2. テストコードが含まれるプロジェクト
+
+まずはテスト対象から作成します。
+
+```cmd
+dotnet new classlib -o HelloXUnit
+```
+
+作成したら、プロジェクトをソリューションに追加します。
+
+```cmd
+dotnet sln add HelloXUnit/HelloXUnit.csproj
+```
+
+同様に、テストコード側のプロジェクトも作成し、ソリューションへ追加します。
+
+```cmd
+dotnet new xunit -o HelloXUnit.Tests
+dotnet sln HelloXUnit.sln add HelloXUnit.Tests/HelloXUnit.Tests.csproj
+```
+
+テストコードはテスト対象を参照する必要がありますので、テストコードプロジェクト側からの参照を追加しましょう。
+
+```cmd
+dotnet add HelloXUnit.Tests/HelloXUnit.Tests.csproj reference HelloXUnit/HelloXUnit.csproj
+```
+
 
 HelloXUnit.Testにはデフォルトで一つのテストメソッドが実装されています。まずはそのテストを実行し、ワークスペースが正しく作られたことを確認してみましょう。
 
@@ -25,9 +57,7 @@ HelloXUnit.Testにはデフォルトで一つのテストメソッドが実装�
 dotnet test
 ```
 
-TODO：個々のIDEからの実行方法（VSとVS for Mac）
-
-これで準備は完了です。それでは早速始めましょう。
+これで準備は完了です。それでは早速始めましょう。以降は各自の環境に合わせた開発環境を利用ください。
 
 ## 初めてのxUnit
 
@@ -36,29 +66,29 @@ TODO：個々のIDEからの実行方法（VSとVS for Mac）
 HelloXUnitプロジェクトにCalculatorクラスを作成し、以下のように記述してください。
 
 ```cs
+using System;
+
 namespace HelloXUnit
 {
-    public class Calculator
+    public static class Calculator
     {
-        public static int Add(int x, int y) => x + y;
-        public static int Subtract(int x, int y) => x - y;
-        public static bool IsOdd(int value) => value % 2 == 1;
+        public static int Add(int x, int y) => throw new NotImplementedException();
+        public static int Subtract(int x, int y) => throw new NotImplementedException();
+        public static bool IsOdd(int value) => throw new NotImplementedException();
     }
 }
 ```
 
-足し算・引き算そして奇数判定を行うメソッドが実装されています。
+足し算・引き算そして奇数判定を行うメソッドが定義されていますが、まだ実装はされていません。
 
-続いてHelloXUnit.TestプロジェクトにCalculatorクラスをテストするCalculatorFixture
-
-テストクラスを作成する
+続いてHelloXUnit.TestプロジェクトにCalculatorクラスをテストするCalculatorTestsクラスを作成する
 
 ```cs
 using Xunit;
 
-namespace HelloXUnit.Test
+namespace HelloXUnit.Tests
 {
-    public class CalculatorFixture
+    public class CalculatorTests
     {
         [Fact]
         public void AddTest()
@@ -75,13 +105,44 @@ namespace HelloXUnit.Test
 }
 ```
 
+xUnitではテストメソッドに「Fact」もしくは「Theory」属性を宣言してテストを実装します。
+
+上記コードは足し算と引き算のテストコードが実装されています。それぞれ実行結果を、AssertクラスのAssertionメソッドであるEqualメソッドを利用して評価しています。
+
 xUnitでは様々なAssertionメソッドで標準で用意されています。[Assertionチートシート](Assertion-CheatSheet.md)を用意してありますので、そちらを御覧ください。
+
+ではテストを実行してみましょう。
+
+TODO:各種IDEでもテストの実行方法の追記
+
+もちろんメソッドが実装されていないため、実行結果はエラーになります。
+
+ではCalculatorクラスに足し算と引き算を実装しましょう。
+
+```cs
+namespace HelloXUnit
+{
+    public static class Calculator
+    {
+        public static int Add(int x, int y) => x + y;
+        public static int Subtract(int x, int y) => x - y;
+        public static bool IsOdd(int value) => throw new NotImplementedException();
+    }
+}
+```
+
+実装できたら再度テストを実行します。テストが正常に実行されたことが確認できましたか？
+
+これが最もシンプルなテストケースの実装になります。
 
 ## Theoryを利用したテスト
 
-Factは常に正となるテストを実施するが、特定のデータセットでのみ当てはまるテストはTheoryを使う。対象のデータセットの指定は複数あるが、まずはInlineDataを利用する。
+xUnit.netではテストメソッドに宣言する属性として「Fact」と「Teory」の二つがあります。それぞれ日本語に訳すと、事実と理論という意味になるでしょうが、そこをあまり深く掘り下る意味はないように思います。
 
-実際にIsOddメソッド（奇数判定メソッド）で試してみよう。
+分かりやすいのは、TheoryはFactとは異なり、複数のデータセットを定義することで一つのテストメソッドで複数のテストを実行できる点にあります。
+
+
+実際にIsOddメソッド（奇数判定メソッド）で試してみよう。CalculatorTestsに次のようなテストメソッドを実装します。
 
 ```cs
 [Theory]
@@ -101,7 +162,23 @@ public void IsOddWhenFalse(int value)
 }
 ```
 
-実行するとIsOddWhenTrueの2番目がエラーになる。
+実装したらエラーとなることを確認したのち、CalculatorのIsOddメソッドを実装しましょう。
+
+```cs
+namespace HelloXUnit
+{
+    public static class Calculator
+    {
+        public static int Add(int x, int y) => x + y;
+        public static int Subtract(int x, int y) => x - y;
+        public static bool IsOdd(int value) => value % 2 == 1;
+    }
+}
+
+```
+
+
+実行するとIsOddWhenTrueの2番目がエラーになります。
 
 > [InlineData(4)]
 
@@ -109,6 +186,6 @@ public void IsOddWhenFalse(int value)
 
 > [InlineData(5)]
 
-に修正して再実行する。全て正常になるのが見て取れる。
+に修正して再実行する。全て正常になるのが見て取れます。
 
 [戻る](../README.md)
