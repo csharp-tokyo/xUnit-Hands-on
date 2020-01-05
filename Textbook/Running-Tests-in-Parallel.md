@@ -2,15 +2,17 @@
 
 この項は公式ドキュメント「[Running Tests in Parallel](https://xunit.net/docs/running-tests-in-parallel)」をベースとしています。
 
-xUnit.net（の2.x以降）では標準でテストの並列化が有効になっています。
+xUnit.net（の2.x以降）では標準でテストの並列化が有効になっています。xUnit.netのテストの並列化を理解するためには「テストコレクション」の概念を理解する必要があります。
 
-xUnit.netのテストの並列化を理解するためには「テストコレクション」の概念を理解する必要があります。
+実際に手を動かしながら理解していきましょう。
+
+Parallelソリューションを開いてください。このソリューションにはParallel.Testsのみが存在します。テスト対象を用意する必要がない、もしくはわざわざテスト対象を用意すると理解を余計に阻害する場合、以降はテストコードプロジェクトだけ利用します。
 
 ## テストコレクション
 
 xUnit.netでは、同一のテストコレクション内は並列化されず逐次実行されます
 
-HelloXUnit.ParallelTestプロジェクト内のUnitTest1.csを開き次のように実装してみてください。
+Parallel.Testsプロジェクト内のUnitTest1.csを開き次のように実装してみてください。
 
 ```cs
     public class UnitTest1
@@ -55,6 +57,10 @@ HelloXUnit.ParallelTestプロジェクト内のUnitTest1.csを開き次のよう
 
 実行すると5秒程度で完了し、並列化されていることが分かります。
 
+特に指定しなかった場合、一つのクラスが一つのテストコレクションとなります。xUnit.netでは単一のテストコレクションは逐次実行され、ことなるテストコレクションは平行実行されます。
+
+このためテストをクラスを分割すると平行実行され、全体の実行時間が短縮されることになりました。
+
 ## カスタム テストコレクション
 
 テストクラス間で並列実行されては困る場合、異なるテストクラスを同一のテストコレクションに含めることが可能です。
@@ -89,6 +95,6 @@ HelloXUnit.ParallelTestプロジェクト内のUnitTest1.csを開き次のよう
 
 ## その他の並列実行の詳細
 
-並列実行をカスタムする機能が提供されていますが、ここでの解説は省略します。公式ドキュメントの「[Running Tests in Parallel](https://xunit.net/docs/running-tests-in-parallel)」に詳細な記述がありますので、そちらを御覧ください。
+並列実行をカスタムする機能が提供されていますが、ここでの解説は省略します。公式ドキュメントの「[Running Tests in Parallel](https://xunit.net/docs/running-tests-in-parallel)」に詳細な記述があります。
 
 [戻る](../README.md)
