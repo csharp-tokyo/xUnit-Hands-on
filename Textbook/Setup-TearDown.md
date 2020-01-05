@@ -8,7 +8,15 @@
 
 ユーティリティクラスではファイルを指定して、存在した場合にだけ削除するようなメソッドを実装します。実行した結果、ファイルが存在していたらtrueを返します。
 
-まずHelloXUnitプロジェクトにFilesクラスを作成し、テスト対象のメソッドを定義します（まだ中身は実装しません）。
+それではWorkSpaceフォルダ下にあるSetupTearDownソリューションを開いてください。
+
+SetupTearDownソリューションには以下の二つのプロジェクトが存在します。
+
+1. SetupTearDown
+2. SetupTearDown.Tests
+
+まずSetupTearDownプロジェクトのFileクラスを開き、テスト対象のメソッドを定義します（まだ中身は実装しません）。しばらくはテストファーストな開発スタイルで進めていきます。
+
 
 ```cs
 using System.IO;
@@ -25,7 +33,7 @@ namespace HelloXUnit
 }
 ```
 
-続いてテストクラスをHelloXUnit.Testプロジェクトに作成しましょう。
+続いてSetupTearDown.Testsプロジェクトを開いてください。事前にIDisposableの空実装が済まされているのが見て取れます。
 
 ```cs
 using System;
@@ -43,7 +51,7 @@ namespace HelloXUnit.Test
 }
 ```
 
-初期処理として、コンストラクタで削除対象のファイルを作成します。
+まずは初期処理として、コンストラクタで削除対象のファイルを作成します。
 
 ```cs
         private const string ExistFileName = "test.txt";
