@@ -12,13 +12,23 @@
 
 最もシンプルなデータセット定義です。InlineDataで無理なく記述できるのであればInlineDataを利用するのが可読性なども高く好ましいでしょう。
 
-HelloXUnit.DataAttributeTestプロジェクトのUnitTest1.csクラスを開いてください。そこには下記のような足し算を実行するテスト対象のメソッドが用意されています。
+TheoryAndDataAttributeソリューションを開き、TheoryAndDataAttributeプロジェクトのCalculator.csクラスを開いてください。
 
 ```cs
+using System;
+
+namespace TheoryAndDataAttribute
+{
+    public static class Calculator
+    {
         public static int Add(int x, int y) => x + y;
+    }
+}
 ```
 
-これに対して、2種類のデータセットを用いてテストを実施するコードを作成しましょう。
+今回は事前に実装を用意しておきました。これに対して、2種類のデータセットを用いてテストを実施するコードを作成しましょう。
+
+TheoryAndDataAttribute.TestsのCalculatorTests.csを開き、以下のようなテストを記述・実行してください。
 
 ```cs
         [Theory]
@@ -47,7 +57,7 @@ MemberDataは3種類のメンバーを利用することができます。
 いずれもIEnumerable<object[]>な値を返す、publicでstaticなメンバーである必要があります。
 
 
-使い分ける明確なルールがあるわけではありませんが、例えば都度データを生成する場合はメソッドを、一度生成したものを別のテストケースでも使いまわすのであればメソッド以外を利用するのが明確かもしれませんが、厳密な使い分けが必要かどうかはプロダクトごとに検討すればよいでしょう。
+使い分ける明確なルールがあるわけではありませんが、例えば都度データを生成する場合はメソッドを、一度生成したものを別のテストケースでも使いまわすのであればメソッド以外を利用するのが明確かもしれません。使い分けが必要かどうかはプロダクトごとに検討すればよいでしょう。
 
 ### メソッドを利用したMemberData
 
@@ -111,7 +121,7 @@ MemberData属性の引数にメソッド名を指定します。
 
 MemberDataで記載した場合に、テストケースクラスにテストデータを生成するためのコードが大量に混在してしまう場合、ClassDataを利用すると課題が解決するかもしれません。
 
-これまでと同等のClassDataを利用したコードを作成してみましょう。
+まずはテストデータを生成するクラスを作ります。AddTestDataSets.csを開き、次のように実装してください。
 
 ```cs
         class AddTestDataSets : IEnumerable<object[]>
@@ -130,7 +140,11 @@ MemberDataで記載した場合に、テストケースクラスにテストデ�
                 return GetEnumerator();
             }
         }
+```
 
+データセットとなるクラスはIEnumerable&lt;object[]>を実装します。続いてテストコードをCalculatorTests.csに追加しましょう。
+
+```cs
         [Theory]
         [ClassData(typeof(AddTestDataSets))]
         public void ClassDataTest(int x, int y, int result)
@@ -141,7 +155,6 @@ MemberDataで記載した場合に、テストケースクラスにテストデ�
 
 ClassData属性でデータセットのTypeを指定しています。文字列ではない点に注意してください。
 
-データセットとなるクラスはIEnumerable&lt;object[]>を実装します。
 
 このようにデータセットをクラスに分離することで、テストデータの生成に複雑なロジックが必要であったり、例えばデータベースへの接続を必要とするテストケースで、テストデータの生成時に必要となるロジックの共有化などが可能となります。
 
