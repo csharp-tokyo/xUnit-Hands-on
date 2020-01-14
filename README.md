@@ -18,7 +18,7 @@
 
 - OS
   - Windows 10
-  - macOS xxx
+  - macOS Catalina
 - .NET Core 3.1 or later
 
 ## ハンズオン コンテンツ
