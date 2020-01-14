@@ -39,3 +39,9 @@ namespace CapturingOutput.Tests
 ```
 
 ITestOutputHelperをコンストラクタでインジェクションしてもらい利用します。ITestOutputHelperはConsoleクラスと同様の出力フォーマットをサポートしています。
+
+## コンソールから実行する場合
+コンソールからテスト実行する場合は、--loggerオプションを付けて実行します。
+```cmd
+dotnet test --logger:"console;verbosity=detailed"
+```
