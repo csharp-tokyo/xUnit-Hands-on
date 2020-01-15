@@ -34,8 +34,8 @@
 ## xUnit.net API Doumentation
 
 - [Assertionチートシート](Textbook/Assertion-CheatSheet.md)
-- [xUnit API Doumentation](https://nuitsjp.github.io/xUnit-and-Moq-Hands-on/)
-  - [Assertクラス](https://nuitsjp.github.io/xUnit-and-Moq-Hands-on/class_xunit_1_1_assert.html)
+- [xUnit API Doumentation](https://csharp-tokyo.github.io/xUnit-Hands-on/)
+  - [Assertクラス](https://csharp-tokyo.github.io/xUnit-Hands-on/class_xunit_1_1_assert.html)
 
 公式にはドキュメントがないため、コードから自動生成したものを公開しています。
 

@@ -1,12 +1,12 @@
 # TheoryとDataAttribute
 
-「[xUnit.netをはじめよう！](Textbook/Getting-Started.md)」でも触れたように、xUnit.netではTheory属性を宣言することで複数のデータセットによるテストを宣言的に記述することができます。データセットは[DataAttributeクラス](https://nuitsjp.github.io/xUnit-and-Moq-Hands-on/class_xunit_1_1_sdk_1_1_data_attribute.html)のサブクラスとして実装されており、3種類の属性が標準で用意されています。
+「[xUnit.netをはじめよう！](Textbook/Getting-Started.md)」でも触れたように、xUnit.netではTheory属性を宣言することで複数のデータセットによるテストを宣言的に記述することができます。データセットは[DataAttributeクラス](https://csharp-tokyo.github.io/xUnit-Hands-on/class_xunit_1_1_sdk_1_1_data_attribute.html)のサブクラスとして実装されており、3種類の属性が標準で用意されています。
 
 1. InlineData
 2. MemberData
 3. ClassData
 
-[MemberDataAttributeBaseクラス](https://nuitsjp.github.io/xUnit-and-Moq-Hands-on/class_xunit_1_1_member_data_attribute_base.html) を継承することで独自の属性を作成することもできますが、本項では割愛します。
+[MemberDataAttributeBaseクラス](https://csharp-tokyo.github.io/xUnit-Hands-on/class_xunit_1_1_member_data_attribute_base.html) を継承することで独自の属性を作成することもできますが、本項では割愛します。
 
 ## InlineData
 
