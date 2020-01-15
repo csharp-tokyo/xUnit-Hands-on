@@ -241,7 +241,7 @@ CollectionDefinitionでコレクション名を定義し、ICollectionFixture&lt
 
 ## 非同期ライフタイム
 
-共有コンテキストには、非同期に初期化・終了処理を行うための、[IAsyncLifetime](https://nuitsjp.github.io/xUnit-and-Moq-Hands-on/interface_xunit_1_1_i_async_lifetime.html)が用意されています。
+共有コンテキストには、非同期に初期化・終了処理を行うための、[IAsyncLifetime](https://csharp-tokyo.github.io/xUnit-Hands-on/interface_xunit_1_1_i_async_lifetime.html)が用意されています。
 
 実際に試しながらみてみましょう。
 

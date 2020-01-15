@@ -19,11 +19,12 @@ SetupTearDownソリューションには以下の二つのプロジェクトが�
 
 
 ```cs
+using System;
 using System.IO;
 
-namespace HelloXUnit
+namespace SetupTearDown
 {
-    public class Files
+    public static class Files
     {
         public static bool DeleteIfExist(string file)
         {
@@ -40,7 +41,7 @@ using System;
 using System.IO;
 using Xunit;
 
-namespace HelloXUnit.Test
+namespace SetupTearDown.Tests
 {
     public class FilesTests : IDisposable
     {

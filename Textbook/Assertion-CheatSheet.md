@@ -1,6 +1,6 @@
 # Assertionチートシート
 
-より詳細は[APIドキュメント](https://nuitsjp.github.io/xUnit-and-Moq-Hands-on/class_xunit_1_1_assert.html)を参照。
+より詳細は[APIドキュメント](https://csharp-tokyo.github.io/xUnit-Hands-on/class_xunit_1_1_assert.html)を参照。
 
 TODO:サンプルの用意
 
