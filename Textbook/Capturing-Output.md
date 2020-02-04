@@ -39,3 +39,7 @@ namespace CapturingOutput.Tests
 ```
 
 ITestOutputHelperをコンストラクタでインジェクションしてもらい利用します。ITestOutputHelperはConsoleクラスと同様の出力フォーマットをサポートしています。
+
+---
+
+[README へ戻る](../README.md)

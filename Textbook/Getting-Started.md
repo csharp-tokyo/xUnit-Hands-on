@@ -188,4 +188,6 @@ namespace HelloXUnit
 
 に修正して再実行します。全て正常になるのが見て取れます。
 
-[戻る](../README.md)
+---
+
+[次へ: 初期化処理と終了処理](./Setup-TearDown.md) | [README へ戻る](../README.md)

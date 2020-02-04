@@ -97,4 +97,6 @@ Parallel.Testsプロジェクト内のUnitTest1.csを開き次のように実装
 
 並列実行をカスタムする機能が提供されていますが、ここでの解説は省略します。公式ドキュメントの「[Running Tests in Parallel](https://xunit.net/docs/running-tests-in-parallel)」に詳細な記述があります。
 
-[戻る](../README.md)
+---
+
+[次へ: 共有コンテキスト](./Shared-Context.md) | [README へ戻る](../README.md)
