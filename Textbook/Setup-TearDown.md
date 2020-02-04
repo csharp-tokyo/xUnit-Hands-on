@@ -116,4 +116,6 @@ namespace SetupTearDown.Tests
 
 では再度テストを実行します。全て成功することが確認できるはずです。
 
-[戻る](../README.md)
+---
+
+[次へ: 非同期処理のテスト](./Async-Await.md) | [README へ戻る](../README.md)

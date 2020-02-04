@@ -279,4 +279,6 @@ Fixturesフォルダの下に、非同期に重たい処理を実行するAsyncH
 
 AsyncHeavyFixtureはここまでに解説した共有コンテキストそれぞれで利用可能です。ここではIClassFixture&lt;T>を利用しているのが見て取れます。
 
-[戻る](../README.md)
+---
+
+[次へ: デバッグ出力](./Capturing-Output.md) | [README へ戻る](../README.md)
