@@ -20,6 +20,10 @@
   - Windows 10
   - macOS Catalina
 - .NET Core 3.1 or later
+- 環境にあった以下の何れかのIDEもしくはエディター
+  - Visual Studio 2019
+  - Visual Studio for Mac
+  - Visual Studio Code
 
 ## ハンズオン コンテンツ
 
