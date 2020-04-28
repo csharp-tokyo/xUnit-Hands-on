@@ -120,6 +120,8 @@ TODO:各種IDEでもテストの実行方法の追記
 ではCalculatorクラスに足し算と引き算を実装しましょう。
 
 ```cs
+using System;
+
 namespace HelloXUnit
 {
     public static class Calculator
