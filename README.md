@@ -2,7 +2,7 @@
 
 本プロジェクトでは、[xunit.net](https://xunit.net/)のハンズオン資料を公開しています。
 
-本プロジェクトは、つぎの三つも達成することを目的としています。
+本プロジェクトは、つぎの3つを達成することを目的としています。
 
 1. 集合教育を実施するための資料の提供
 2. 自習資料の提供
@@ -20,7 +20,7 @@
   - Windows 10
   - macOS Catalina
 - .NET Core 3.1 or later
-- 環境にあった以下の何れかのIDEもしくはエディター
+- 環境にあった以下のいずれかのIDEもしくはエディター
   - Visual Studio 2019
   - Visual Studio for Mac
   - Visual Studio Code
