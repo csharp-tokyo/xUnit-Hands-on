@@ -114,6 +114,8 @@ xUnitにはさまざまなAssertionメソッドが標準で用意されていま
 ではテストを実行してみましょう。それぞれの環境のテストの実行方法は、以下を参照してください。
 
 - [Visual Studio 2019](How-to-run-the-test/Visual-Studio-2019.md)
+- [Visual Studio for Mac](How-to-run-the-test/Visual-Studio-for-Mac.md)
+- [Visual Studio Code](How-to-run-the-test/Visual-Studio-Code.md)
 
 もちろんメソッドが実装されていないため、実行結果はエラーになります。
 
