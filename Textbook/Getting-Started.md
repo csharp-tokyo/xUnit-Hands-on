@@ -194,4 +194,4 @@ namespace HelloXUnit
 
 ---
 
-[次へ: 初期化処理と終了処理](./Setup-TearDown.md) | [README へ戻る](../README.md)
+[次へ: 初期化処理と終了処理](./Setup-TearDown.md) | [README に戻る](../README.md)

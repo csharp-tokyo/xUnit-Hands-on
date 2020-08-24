@@ -132,7 +132,7 @@ UnitTest1クラスをつぎのように修正します。
         public void Dispose()
         {
             //_heavyFixture.Dispose();
-        } 
+        }
     }
 ```
 
@@ -208,7 +208,7 @@ CollectionDefinitionでコレクション名を定義し、ICollectionFixture&lt
         public void Dispose()
         {
             //_heavyFixture.Dispose();
-        } 
+        }
     }
 ```
 
@@ -281,4 +281,4 @@ AsyncHeavyFixtureはここまでに解説した共有コンテキストそれぞ
 
 ---
 
-[次へ: デバッグ出力](./Capturing-Output.md) | [README へ戻る](../README.md)
+[次へ: デバッグ出力](./Capturing-Output.md) | [README に戻る](../README.md)

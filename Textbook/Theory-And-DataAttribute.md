@@ -160,4 +160,4 @@ ClassData属性でデータセットのTypeを指定しています。文字列�
 
 ---
 
-[次へ: 並列テストの実行](./Running-Tests-in-Parallel.md) | [README へ戻る](../README.md)
+[次へ: 並列テストの実行](./Running-Tests-in-Parallel.md) | [README に戻る](../README.md)

@@ -118,4 +118,4 @@ namespace SetupTearDown.Tests
 
 ---
 
-[次へ: 非同期処理のテスト](./Async-Await.md) | [README へ戻る](../README.md)
+[次へ: 非同期処理のテスト](./Async-Await.md) | [README に戻る](../README.md)

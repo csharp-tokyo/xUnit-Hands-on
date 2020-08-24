@@ -52,4 +52,4 @@ Assertionの詳細は[Assertionチートシート](Assertion-CheatSheet.md)を�
 
 ---
 
-[次へ: TheoryとDataAttribute](./Theory-And-DataAttribute.md) | [README へ戻る](../README.md)
+[次へ: TheoryとDataAttribute](./Theory-And-DataAttribute.md) | [README に戻る](../README.md)
