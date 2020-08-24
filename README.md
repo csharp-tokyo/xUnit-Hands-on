@@ -1,5 +1,10 @@
 # xUnit.net Hands-on
 
+[![Github issues](https://img.shields.io/github/issues/csharp-tokyo/xUnit-Hands-on)](https://github.com/csharp-tokyo/xUnit-Hands-on/issues)
+[![Github forks](https://img.shields.io/github/forks/csharp-tokyo/xUnit-Hands-on)](https://github.com/csharp-tokyo/xUnit-Hands-on/network/members)
+[![Github stars](https://img.shields.io/github/stars/csharp-tokyo/xUnit-Hands-on)](https://github.com/csharp-tokyo/xUnit-Hands-on/stargazers)
+[![Github license](https://img.shields.io/github/license/csharp-tokyo/xUnit-Hands-on)](https://github.com/csharp-tokyo/xUnit-Hands-on/)
+
 本プロジェクトでは、[xunit.net](https://xunit.net/)のハンズオン資料を公開しています。
 
 本プロジェクトは、つぎの3つを達成することを目的としています。
