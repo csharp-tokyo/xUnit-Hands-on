@@ -10,7 +10,7 @@ TODO:サンプルの用意
 |Collection||指定した複数の値が、指定されたすべてのActionをすべてパスするか？|
 |Contains|DoesNotContain|コレクションに対象が含まれるか？|
 |Empty|NotEmpty|コレクションが空か？|
-|Single||コレクションに一つだけ要素が含まれるか？|
+|Single||コレクションに1つだけ要素が含まれるか？|
 |Equal|NotEqual|同値か？（コレクションは全要素を比較）|
 |StrictEqual|NotStrictEqual|厳密な同値検証（EqualsとGetHashCodeのovverideが必要）|
 |Same|NotSame|同インスタンスか？|

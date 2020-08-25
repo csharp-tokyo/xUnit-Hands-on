@@ -2,7 +2,7 @@
 
 この項は公式ドキュメント「[Capturing Output](https://xunit.net/docs/capturing-output)」をベースとしています。
 
-xUnit.netではテスト実行にデバッグ支援などのために利用できる出力のキャプチャー機構が用意されています。xUnit.netでは二つの仕組みが用意されています。
+xUnit.netではテスト実行にデバッグ支援などのために利用できる出力のキャプチャー機構が用意されています。xUnit.netでは2つの仕組みが用意されています。
 
 1. Unitテストでの出力のキャプチャー
 2. xUnit.net機能拡張クラスでの主力のキャプチャー
@@ -38,8 +38,8 @@ namespace CapturingOutput.Tests
 }
 ```
 
-ITestOutputHelperをコンストラクタでインジェクションしてもらい利用します。ITestOutputHelperはConsoleクラスと同様の出力フォーマットをサポートしています。
+ITestOutputHelperをコンストラクターでインジェクションしてもらい利用します。ITestOutputHelperはConsoleクラスと同様の出力フォーマットをサポートしています。
 
 ---
 
-[README に戻る](../README.md)
+[次へ: TheoryとDataAttribute](./Theory-And-DataAttribute.md) | [README に戻る](../README.md)
